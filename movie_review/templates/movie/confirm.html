@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Confirm Page</title>
+{% endblock %}
+{% block content %}
+        <h3>Do you really wants to delete reviews..??</h3>
+        <button type="submit">Yes</button>
+        <a href="{% url 'show_url' %}">
+            <button type="button">No</button>
+        </a>
+
+{% endblock %}

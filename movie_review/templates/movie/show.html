@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Show</title>
+{% endblock %}
+{% block content %}
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th>Movie Id</th>
+                <th>MovieTitle</th>
+                <th>Director</th>
+                <th>Review</th>
+                <th>Ratings</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Genres</th>
+                <th colspan="2" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{ movie.id }}</td>
+                    <td>{{ movie.movieTitle }}</td>
+                    <td>{{ movie.director }}</td>
+                    <td>{{ movie.review_content }}</td>
+                    <td>{{ movie.ratings }}</td>
+                    <td>{{ movie.reviewer_emailId }}</td>
+                    <td>{{ movie.status }}</td>
+                    <td>{{ movie.genres }}</td>
+                    <td>
+                        <a href="{% url 'update_url' movie.id %}">
+                            <button class="btn btn-primary">Update</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'delete_url' movie.id %}">
+                            <button class="btn btn-primary">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

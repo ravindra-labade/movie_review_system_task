@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Add Reviews</title>
+{% endblock %}
+{% block content %}
+            <center class="border border-5 m-auto p-5 w-50">
+                <h4>Movie Review Form</h4>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <label>Submit Review</label>
+                    <input type="submit" value="Submit">
+                </form>
+            </center>
+
+{% endblock %}
